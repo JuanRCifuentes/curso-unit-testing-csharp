@@ -60,4 +60,16 @@ public class StringManipulationTest
         Assert.StartsWith("ten", result);
         Assert.Contains("cat", result);
     }
+    
+    [Fact]
+    public void GetStringLength()
+    {
+        // Arrange
+        // var strOperations = new StringOperations();
+        // Act
+        Assert.ThrowsAny<ArgumentNullException>(() => _strOperations.GetStringLength(null));
+        var result = _strOperations.GetStringLength("uno");
+        // Assert
+        Assert.Equal(3, result);
+    }
 }
