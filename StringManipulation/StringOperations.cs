@@ -12,7 +12,7 @@ namespace StringManipulation
     public class StringOperations
     {
         private readonly ILogger _logger;
-        public StringOperations() {
+        public StringOperations(){
         }
 
         public StringOperations(ILogger<StringOperations> logger)
