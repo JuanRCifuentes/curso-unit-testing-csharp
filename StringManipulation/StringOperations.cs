@@ -90,7 +90,7 @@ namespace StringManipulation
             return input.Pluralize();
         }
 
-        public string QuantintyInWords(string input, int quantity)
+        public string QuantityInWords(string input, int quantity)
         {
             return input.ToQuantity(quantity, ShowQuantityAs.Words);
         }

@@ -48,4 +48,16 @@ public class StringManipulationTest
         // Assert
         Assert.Equal("jfdsklfdsfdsfdsafdsafsadfds", result);
     }
+    
+    [Fact]
+    public void QuantityInWords()
+    {
+        // Arrange
+        // var strOperations = new StringOperations();
+        // Act
+        var result = _strOperations.QuantityInWords("cat", 10);
+        // Assert
+        Assert.StartsWith("ten", result);
+        Assert.Contains("cat", result);
+    }
 }
