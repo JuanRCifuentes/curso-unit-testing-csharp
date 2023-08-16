@@ -72,4 +72,44 @@ public class StringManipulationTest
         // Assert
         Assert.Equal(3, result);
     }
+    
+    [Fact]
+    public void CountOccurrences()
+    {
+        // Arrange
+        // var mockLogger = new Mock<ILogger<StringOperations>>();
+        var mockLogger = new Mock<ILogger<StringOperations>>();
+        var strOperations = new StringOperations(mockLogger.Object);
+        // Act
+        var result = strOperations.CountOccurrences("Hello Platzi", 'l');
+        // Assert
+        Assert.Equal(3, result);
+    }
+    
+    [Theory]
+    [InlineData("V", 5)]
+    [InlineData("III", 3)]
+    [InlineData("X", 10)]
+    public void FromRomanToNumber(string romanNumber, int expected)
+    {
+        // Arrange
+        // var strOperations = new StringOperations();
+        // Act
+        var result = _strOperations.FromRomanToNumber(romanNumber);
+        // Assert
+        Assert.Equal(expected, result);
+    }
+    
+    [Fact]
+    public void ReadFile()
+    {
+        // Arrange
+        var strOperations = new StringOperations();
+        var mockFileReader = new Mock<IFileReaderConector>();
+        mockFileReader.Setup(p => p.ReadString(It.IsAny<string>())).Returns("Reading File");
+        // Act
+        var result = strOperations.ReadFile(mockFileReader.Object, "file.txt");
+        // Assert
+        Assert.Equal("Reading File", result);
+    }
 }
